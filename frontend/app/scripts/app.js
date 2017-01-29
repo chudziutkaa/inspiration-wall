@@ -34,6 +34,11 @@ angular
         controller: 'BoardsCtrl',
         controllerAs: 'boards'
       })
+      .when('/boards/:boardId', {
+        templateUrl: 'views/lists.html',
+        controller: 'ListsCtrl',
+        controllerAs: 'lists'
+      })
       .otherwise({
         redirectTo: '/'
       });
