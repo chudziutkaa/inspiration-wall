@@ -1,19 +1,14 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:show, :edit, :destroy]
+  before_action :set_board, only: [:show, :update, :destroy]
 
   def index
     @boards = Board.all
     render json: @boards
   end
 
-  # def new
-  #   @board = Board.new
-  # end
-
   def create
     @board = Board.new(board_params)
     if @board.save
-      # redirect_to boards_path
       render json: @board
     else
       render new_board_path
@@ -24,15 +19,9 @@ class BoardsController < ApplicationController
     render json: @board
   end
 
-  def edit
-  end
-
   def update
-    if @board.update(board_params)
-      redirect_to boards_path
-    else
-      render edit_board_path
-    end
+    @board.update(board_params)
+    render json: @board
   end
 
   def destroy
