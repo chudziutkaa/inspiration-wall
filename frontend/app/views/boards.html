@@ -1,7 +1,7 @@
 <div class="content">
   <h4><i class="fa fa-id-badge" aria-hidden="true"></i> Your boards</h4>
 
-  <div class="boards-rectangle">
+  <div class="box boards-rectangle">
     <div class="boards-title">
       <div>
         <span ng-hide="addMode">
@@ -18,9 +18,9 @@
   </div>  
 
   <div ng-repeat="b in boards">
-    <div class="boards-rectangle">
+    <div class="box boards-rectangle">
       <div class="boards-title">
-        <div><span>{{b.title}}</span></div>
+        <div><span><a href="/#!/boards/{{b.id}}">{{b.title}}</a></span></div>
       </div>
     </div>
   </div>

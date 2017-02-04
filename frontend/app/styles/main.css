@@ -151,6 +151,12 @@ main p {
   margin: 50px;
 }
 
+.box {
+  float: left;
+  position: relative;
+  overflow: hidden;  
+}
+
 .boards-rectangle {
   width: 285px;
   height: 150px;
@@ -158,9 +164,6 @@ main p {
   background-position: center center;
   background-size: cover;
   margin: 5px;
-  float: left;
-  position: relative;
-  overflow: hidden;
 }
 
 .boards-rectangle:before{
@@ -212,7 +215,7 @@ main p {
 .list {
   width: 200px;
   height: 300px;
-  background-color: #ffffff;
+  background-color: #f5f5dc;
   margin: 10px;
   font-family: 'Pacifico', cursive;
   text-align: center;
