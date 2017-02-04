@@ -200,5 +200,12 @@ main p {
 }
 
 .pin-board {
+  border-style: solid;
+  border-width: 15px;
+  border-color: #ffffff;
+  background-color: #52695c;
+  margin: 15px;
+  padding: 10px;
+}
 
 }
