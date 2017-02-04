@@ -15,11 +15,16 @@ angular.module('frontendApp')
 angular.module('frontendApp')
   .controller('ListsCtrl', function ($scope, List, $routeParams) {
     
-    // $scope.id = $routeParams.boardId;
-
     $scope.lists = {};
     List.query(function(response){
       $scope.lists = response;
     });
+
+    $scope.addList = function (newListName) {
+      List.save({name: newListName, board_id: $routeParams.boardId}, function (newList){
+        $scope.lists.push(newList);
+      });
+      console.log("Added");
+    }
 
   });

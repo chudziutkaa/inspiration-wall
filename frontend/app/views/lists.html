@@ -4,5 +4,10 @@
       {{l.name}}
     </div>
   </div>
+  <div class="box">
+    <h3>New list:</h3>
+    <input class="element-input" ng-model="newListName" placeholder="put down the name">
+    <div class="save-btn" ng-click="addList(newListName)">Save</div>
+  </div>
   <div style="clear: both;"></div>
 </div>
