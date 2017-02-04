@@ -1,5 +1,5 @@
 class List < ActiveRecord::Base
-  validates :name, presence: true, length: { maximum: 20, too_long: "%{count} characters is the maximum name's length" }
+  validates :name, presence: true, length: { in: 1 .. 20 }
   has_many :cards
   belongs_to :board
 end
