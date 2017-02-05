@@ -23,8 +23,9 @@ angular.module('frontendApp')
     $scope.addList = function (newListName) {
       List.save({name: newListName, board_id: $routeParams.boardId}, function (newList){
         $scope.lists.push(newList);
+        $scope.newListName = null;
       });
       console.log("Added");
-    }
+    };
 
   });

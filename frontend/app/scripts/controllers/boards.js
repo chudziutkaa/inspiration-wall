@@ -30,12 +30,12 @@ angular.module('frontendApp')
     }
 
     $scope.addBoard = function (newBoardTitle) {
-      // var newBoard = { "title": newBoardTitle }
-      // console.log(newBoard);
       Board.save({title: newBoardTitle}, function (newBoard){
         $scope.boards.push(newBoard);
+        $scope.newBoardTitle = null;
       });
       console.log("Dodano");
       $scope.toggleAdd();
     }
+
 });
