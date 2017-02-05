@@ -7,9 +7,12 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = Board.find(params[:board_id]).lists.create(list_params)
-    @list.save
-    render json: @list
+    @list = Board.find(params[:board_id]).lists.new(list_params)
+    if @list.save
+      render json: @list
+    else
+      render status: 422
+    end
   end
 
   def update

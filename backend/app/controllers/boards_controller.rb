@@ -11,7 +11,7 @@ class BoardsController < ApplicationController
     if @board.save
       render json: @board
     else
-      render new_board_path
+      render status: 422
     end
   end
 
@@ -26,7 +26,6 @@ class BoardsController < ApplicationController
 
   def destroy
     @board.destroy
-    redirect_to boards_path
   end
 
   private
