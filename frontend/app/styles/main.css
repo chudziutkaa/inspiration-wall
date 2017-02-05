@@ -214,13 +214,70 @@ main p {
 }
 
 .list {
+  overflow: auto;
   width: 200px;
   height: 300px;
   background-color: #f5f5dc;
   margin: 10px;
   text-align: center;
+  align-items: center;
 }
 
 .save-btn {
   text-align: center;
+}
+
+.sticky,li {
+  list-style: none;
+}
+
+.sticky {
+  overflow: hidden;
+  padding: 3px;
+}
+
+.sticky li .nested-element {
+  text-decoration: none;
+  color: #000;
+  background: #ffff4c;
+  display: block;
+  height: 150px;
+  width: 150px;
+  padding: 1px;
+  transform: rotate(-6deg);
+}
+
+.sticky li:nth-child(even) .nested-element{
+  transform: rotate(4deg);
+  position: relative;
+  top: 5px;
+}
+
+.sticky li:nth-child(3n) .nested-element{
+  transform: rotate(-3deg);
+  position: relative;
+  top: -5px;
+}
+
+.sticky li:nth-child(5n) .nested-element{
+  transform: rotate(5deg);
+  position: relative;
+  top: -10px;
+}
+
+.sticky li {
+  margin: 1px;
+}
+
+.sticky li h4 {
+  font-size: 140%
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.sticky-input {
+  border: none;
+  background: transparent;
+  width: inherit;
+  font-family: inherit;
 }

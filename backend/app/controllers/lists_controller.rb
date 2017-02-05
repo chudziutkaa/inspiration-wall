@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.where(board_id: params[:board_id])
-    render json: @lists
+    render json: @lists, include: [:cards]
   end
 
   def create

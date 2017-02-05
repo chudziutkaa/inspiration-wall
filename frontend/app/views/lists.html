@@ -1,8 +1,21 @@
 <div class="pin-board">
-  <div ng-repeat="l in lists">
+  <div ng-repeat="l in lists" ng-controller="CardsCtrl">
     <div class="box list">
-      {{l.name}}
-    </div>
+      <p>{{l.name}}</p>
+      <ul class="sticky">
+        <li ng-repeat="c in l.cards">
+          <a class="nested-element" href="#">
+            <h4>{{c.title}}</h4>
+          </a>
+        </li>
+        <li>
+          <p class="nested-element">
+            <input class="sticky-input" ng-model="newCardTitle" placeholder="new card ...">
+            <i ng-click="addCard(newCardTitle, l)" class="fa fa-plus" aria-hidden="true"></i>
+          </p>
+        </li>
+      </ul>
+  </div>
   </div>
   <div class="box">
     <h3>New list:</h3>
