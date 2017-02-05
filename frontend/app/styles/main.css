@@ -199,7 +199,7 @@ main p {
   background: transparent;
   border-bottom: solid 2px black;
   transition: border 0.3s;
-  font-family: 'Cinzel', serif;
+  font-family: inherit;
   text-align: center;
 }
 
