@@ -6,6 +6,7 @@
         <li ng-repeat="c in l.cards">
           <a class="nested-element" href="#">
             <h4>{{c.title}}</h4>
+            <i ng-click="deleteCard(c, l)" class="fa fa-trash-o trash-c" aria-hidden="true"></i>
           </a>
         </li>
         <li>

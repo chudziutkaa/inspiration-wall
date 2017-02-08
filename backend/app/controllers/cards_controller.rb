@@ -17,6 +17,7 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
+    head :no_content
   end
 
   private

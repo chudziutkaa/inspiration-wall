@@ -287,3 +287,8 @@ main p {
   width: inherit;
   font-family: inherit;
 }
+
+.trash-c {
+  position: absolute;
+  bottom: 5px;
+}

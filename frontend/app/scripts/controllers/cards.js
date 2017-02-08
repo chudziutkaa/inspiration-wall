@@ -9,7 +9,7 @@
  */
 angular.module('frontendApp').factory('Card', function($resource, $routeParams){
   return $resource('api/boards/:board_id/lists/:list_id/cards/:id', 
-    {board_id: $routeParams.boardId, list_id: '@list_id'});
+    {board_id: $routeParams.boardId, list_id: '@list_id', id: '@id'});
 });
 
 angular.module('frontendApp')
@@ -24,5 +24,11 @@ angular.module('frontendApp')
       });
       console.log("Added");
     };
+
+    $scope.deleteCard = function (card, list) {
+      Card.delete({id: card.id});
+      var index = list.cards.indexOf(card);
+      list.cards.splice(index, 1);
+    }
 
   });
