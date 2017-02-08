@@ -26,6 +26,7 @@ class BoardsController < ApplicationController
 
   def destroy
     @board.destroy
+    head :no_content
   end
 
   private

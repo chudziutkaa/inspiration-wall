@@ -20,6 +20,7 @@
   <div ng-repeat="b in boards">
     <div class="box boards-rectangle">
       <div class="boards-title">
+        <i ng-click="deleteBoard(b)" class="fa fa-trash-o" aria-hidden="true"></i>
         <div><span><a href="/#!/boards/{{b.id}}">{{b.title}}</a></span></div>
       </div>
     </div>

@@ -9,7 +9,7 @@
  */
 angular.module('frontendApp')
   .factory('Board', function($resource){
-    return $resource('/api/boards/:id');
+    return $resource('/api/boards/:id', {id: '@id'});
   });
 
 angular.module('frontendApp')
@@ -36,6 +36,12 @@ angular.module('frontendApp')
       });
       console.log("Dodano");
       $scope.toggleAdd();
+    }
+
+    $scope.deleteBoard = function (board) {
+      Board.delete({id: board.id});
+      var index = $scope.boards.indexOf(board);
+      $scope.boards.splice(index, 1);
     }
 
 });
