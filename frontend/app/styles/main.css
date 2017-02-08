@@ -223,6 +223,12 @@ main p {
   align-items: center;
 }
 
+.trash-li {
+  float: right;
+  position: absolute;
+  right: 5px;
+}
+
 .save-btn {
   text-align: center;
 }

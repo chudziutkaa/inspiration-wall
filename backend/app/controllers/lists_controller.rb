@@ -22,6 +22,7 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
+    head :no_content
   end
 
   private

@@ -1,7 +1,7 @@
 <div class="pin-board">
   <div ng-repeat="l in lists" ng-controller="CardsCtrl">
     <div class="box list">
-      <p>{{l.name}}</p>
+      <p>{{l.name}} <i ng-click="deleteList(l)" class="fa fa-trash-o trash-li" aria-hidden="true"></i></p>
       <ul class="sticky">
         <li ng-repeat="c in l.cards">
           <a class="nested-element" href="#">
