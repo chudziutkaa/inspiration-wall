@@ -1,13 +1,15 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: [:show, :update, :destroy]
 
+  before_action :authenticate_request!
+
   def index
-    @boards = Board.all
+    @boards = Board.where(user_id: @current_user.id)
     render json: @boards
   end
 
   def create
-    @board = Board.new(board_params)
+    @board = User.find(params[:user_id]).boards.new(board_params)
     if @board.save
       render json: @board
     else
@@ -31,7 +33,7 @@ class BoardsController < ApplicationController
 
   private
   def board_params
-    params.require(:board).permit(:title)
+    params.require(:board).permit([:title, :user_id])
   end
 
   def set_board
