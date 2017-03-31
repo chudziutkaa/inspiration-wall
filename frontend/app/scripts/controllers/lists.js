@@ -9,29 +9,26 @@
  */
 angular.module('frontendApp')
   .factory('List', function($resource, $routeParams) {
-    return $resource('api/boards/:board_id/lists/:id', {board_id: $routeParams.boardId, id: '@id'})
+    console.log($routeParams);
+    return $resource('api/boards/:board_id/lists/:id', {board_id: '@board_id', id: '@id'})
   });
 
 angular.module('frontendApp')
-  .controller('ListsCtrl', function ($scope, List, $routeParams) {
+  .controller('ListsCtrl', function ($scope, List, $routeParams, fetchedLists) {
     
-    $scope.lists = {};
-    List.query(function(response){
-      $scope.lists = response;
-    });
+    $scope.boardLists = fetchedLists;
 
     $scope.addList = function (newListName) {
       List.save({name: newListName, board_id: $routeParams.boardId}, function (newList){
-        $scope.lists.push(newList);
+        $scope.boardLists.push(newList);
         $scope.newListName = null;
       });
-      console.log("Added");
     };
 
     $scope.deleteList = function (list) {
-      List.delete({id: list.id});
-      var index = $scope.lists.indexOf(list);
-      $scope.lists.splice(index, 1);
+      List.delete({board_id: $routeParams.boardId, id: list.id});
+      var index = $scope.boardLists.indexOf(list);
+      $scope.boardLists.splice(index, 1);
     }
 
   });

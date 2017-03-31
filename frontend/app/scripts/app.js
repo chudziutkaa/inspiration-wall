@@ -37,7 +37,15 @@ angular
       .when('/boards/:boardId', {
         templateUrl: 'views/lists.html',
         controller: 'ListsCtrl',
-        controllerAs: 'lists'
+        controllerAs: 'lists',
+        resolve: {
+          List: 'List',
+          fetchedLists: function (List, $route) {
+            var result = List.query({board_id: $route.current.params.boardId}).$promise;
+            return result;
+          }
+        }
+      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'UsersCtrl',
