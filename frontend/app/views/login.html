@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <h3 class="horizontal-line">Sign in \ Sign up</h3>
+  </div>
+  <div class="row">
+    <div class="col-3 vertical-line">
+      <h4>Sign in</h4>
+      <p>Put down your username and password to sign in</p>
+      <br/>
+      <input class="user-input" type="text" ng-model="username" placeholder="username"><br/>
+      <input class="user-input" type="password" ng-model="password" placeholder="password"><br/>
+
+      <button class="burgundy-btn" ng-click="login(username, password)">Login</button>
+    </div>
+    <div class="col-3">
+      <h4>Or - if you don't have account</h4>
+      <h3 style="text-align: center;">Join us!</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt urna sed leo iaculis, eget varius nisi sagittis. Sed augue leo, consequat nec tellus eget, luctus molestie arcu. Integer ultricies.</p>
+      <button class="burgundy-btn"><a href="/#/register">Sign up</a></button>
+    </div>
+  </div>
+</div>

@@ -147,6 +147,118 @@ main p {
   font-size: 1.3rem;
 }
 
+.container {
+  width: 100%;
+}
+
+.container * {
+  box-sizing: border-box;
+}
+
+.container .row:first-of-type {
+  padding-top: 70px;
+}
+
+.row {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.row:before, .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+  width: 16.66%;
+  padding: 15px;
+}
+
+.col-1{
+    width: 16.66%; 
+}
+
+.col-2{
+    width: 33.33%; 
+}
+
+.col-3{
+    width: 50%; 
+}
+
+.col-4{
+    width: 66.664%;
+}
+
+.col-5{
+    width: 83.33%;
+}
+
+.col-6{
+    width: 100%;
+}
+
+.horizontal-line {
+  border-bottom: 1px solid #cccccc;
+}
+
+.vertical-line {
+  border-right: 1px solid #cccccc;
+}
+
+@media all and (max-width: 800px){
+  .col-1{ width: 33.33%; }
+  .col-2{ width: 50%; }
+  .col-3{ width: 83.33%; }
+  .col-4{ width: 100%; }
+  .col-5{ width: 100%; }
+  .col-6{ width: 100%; }
+
+  .row .col-2:last-of-type{
+      width: 100%; 
+  }
+
+  .vertical-line {
+    border-right: none;
+    border-bottom: 1px solid #cccccc;
+  }
+}
+
+@media all and (max-width: 650px){
+  .col-1{ width: 50%; }
+  .col-2{ width: 100%; }
+  .col-3{ width: 100%; }
+  .col-4{ width: 100%; }
+  .col-5{ width: 100%; }
+  .col-6{ width: 100%; }
+
+  .row .col-5 ~ .col-1{
+    width: 100%; 
+  }
+}
+
+.user-input {
+  margin: 5px;
+  height: 40px;
+  width: 100%;
+  max-width: 414px;
+}
+
+.burgundy-btn {
+  margin: 5px auto;
+  height: 35px;
+  width: 100%;
+  max-width: 100px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: #bfbfbf;
+  background-color: #800020;
+}
+
 .content {
   margin: 50px;
 }

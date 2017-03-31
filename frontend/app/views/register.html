@@ -1,0 +1,20 @@
+<div class="container" align="center">
+  <div class="row">
+    <h3 class="horizontal-line">Registration form</h3>
+  </div>
+  <div class="row">
+    <br/>
+    <label>Username</label><br/>
+    <input class="user-input" type="text" ng-model="username" placeholder="username"><br/>
+    <label>Email address</label><br/>
+    <input class="user-input" type="text" ng-model="email" placeholder="email address"><br/>
+    <label>Password</label><br/>
+    <input class="user-input" type="password" ng-model="password1" placeholder="password"><br/>
+    <label>Confirm password</label><br/>
+    <input class="user-input" type="password" ng-model="password2" placeholder="password confirmation"><br/>
+    <br/>
+    <button class="burgundy-btn" ng-click="register(username, email, password1, password2)">Sign up</button>
+    <button class="burgundy-btn" ng-click="currentUser()">get user data</button>
+    <button class="burgundy-btn" ng-click="logout()">Logout</button>
+  </div>
+</div>
