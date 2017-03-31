@@ -99,10 +99,26 @@ body {
 
 .navbar li{
   font-family: 'Abril Fatface', cursive;
+  height: 100%;
+  display: inline;
+}
+
+.transparent-btn {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+}
+
+#logo {
   font-size: 35px;
   padding: 10px;
   color: #D4AF37;
-  height: 100%;
+}
+
+.auth-nav {
+  float: right;
+  margin: 10px;
+  color: white;
 }
 
 header {

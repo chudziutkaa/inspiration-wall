@@ -15,7 +15,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- endbuild -->
   </head>
-  <body ng-app="frontendApp">
+  <body ng-app="frontendApp" ng-controller="UsersCtrl" ng-click="menu=false">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -23,7 +23,12 @@
     <!-- Add your site or application content here -->
     <div>
       <ul class="navbar">
-        <li><a href="/">InspirationWall - get inspired!</a></li>
+        <li><a href="/#/" id="logo">InspirationWall - get inspired!</a></li>
+        <!-- <li><button ng-click="authenticate('google')">Sign in with Google</button></li> -->
+        <li ng-hide="currentUser"><a href="/#/register" class="auth-nav">Register</a></li>
+        <li ng-hide="currentUser"><a href="/#/login" class="auth-nav">Login</a></li>
+        <!-- <li ng-show="currentUser"><button class="auth-nav transparent-btn" ng-click="logout()">Logout</button></li> -->
+        <li ng-show="currentUser" ng-mouseenter="menu=true"><span class="auth-nav">{{currentUser.username}}</span></li>
       </ul>
     </div>
 
