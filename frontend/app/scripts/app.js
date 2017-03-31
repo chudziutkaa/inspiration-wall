@@ -66,3 +66,22 @@ angular
       return {token};
     })
   })
+  .config(function($httpProvider){
+    $httpProvider.interceptors.push(function($q, $location, $window){
+      return {
+        'request': function(config) {
+          config.headers = config.headers || {};
+          if ($window.localStorage.jwtToken){
+            config.headers.Authorization = $window.localStorage.jwtToken;
+          }
+          return config;
+        },
+        'responseError': function (response) {
+          if (response.status == 401 || response.status == 403) {
+            $location.path('/register');
+          }
+          return $q.reject(response);
+        }
+      }
+    })
+  })
