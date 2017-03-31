@@ -10,7 +10,7 @@
         <span ng-show="addMode">
           <input class="element-input" type="text" name="" placeholder="board title" ng-model="newBoardTitle" required>
           <br/>
-          <i class="fa fa-check" aria-hidden="true" ng-click = "addBoard(newBoardTitle)"></i>
+          <i class="fa fa-check" aria-hidden="true" ng-click = "addBoard(newBoardTitle, currentUser.user_id)"></i>
           <i class="fa fa-times" aria-hidden="true" ng-click="toggleAdd()"></i>
         </span>
       </div>

@@ -13,15 +13,13 @@ angular.module('frontendApp')
   });
 
 angular.module('frontendApp')
-  .controller('BoardsCtrl', function ($scope, Board) {
+  .controller('BoardsCtrl', function ($scope, Board, Token) {  
 
     $scope.boards = {};
     Board.query(function(response){
       $scope.boards = response;
-    });
-    // console.log($scope.boards);
-
-    // $scope.hello = "Hola!"
+      console.log($scope.boards);
+    })
 
     $scope.addMode = false;
 
@@ -29,8 +27,10 @@ angular.module('frontendApp')
       $scope.addMode = !$scope.addMode;
     }
 
-    $scope.addBoard = function (newBoardTitle) {
-      Board.save({title: newBoardTitle}, function (newBoard){
+    $scope.addBoard = function (newBoardTitle, user_id) {
+      var board = {title: newBoardTitle, user_id: user_id}
+      console.log("Board: ", board)
+      Board.save(board, function (newBoard){
         $scope.boards.push(newBoard);
         $scope.newBoardTitle = null;
       });
