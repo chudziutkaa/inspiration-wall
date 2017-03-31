@@ -38,8 +38,23 @@ angular
         templateUrl: 'views/lists.html',
         controller: 'ListsCtrl',
         controllerAs: 'lists'
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'UsersCtrl',
+        controllerAs: 'users'
+      })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'UsersCtrl',
+        controllerAs: 'users'
       })
       .otherwise({
         redirectTo: '/'
       });
   });
+  .config(function($provide){
+    $provide.factory('Token', function($window){
+      var token = $window.localStorage['jwtToken'];
+      return {token};
+    })
+  })
